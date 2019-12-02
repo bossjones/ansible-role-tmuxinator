@@ -6,6 +6,9 @@
 bossjones__tmuxinator__path_to_tmuxinator_config:
   - { user: "vagrant", dir: "/home/vagrant" }
 
-
-
 bossjones__tmuxinator__user: "vagrant"
+
+bossjones__tmuxinator__rbenv:
+  env: "system"
+
+bossjones__tmuxinator__rbenv_root: "{% if bossjones__tmuxinator__rbenv.env == 'system' %}/usr/local/rbenv{% else %}~/.rbenv{% endif %}"

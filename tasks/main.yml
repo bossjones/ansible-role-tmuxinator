@@ -24,3 +24,9 @@
     name: "{{bossjones__tmuxinator__user}}"
     groups: "rbenvgrp"
     append: yes
+
+- name: change group ownership of rbenv_root dir
+  file:
+    path: "{{bossjones__tmuxinator__rbenv_root}}"
+    recurse: yes
+    group: "rbenvgrp"
