@@ -30,3 +30,26 @@
     path: "{{bossjones__tmuxinator__rbenv_root}}"
     recurse: yes
     group: "rbenvgrp"
+    owner: "nobody"
+
+# - name: change group ownership of rbenv_root dir
+#   file:
+#     src: files/install_tmuxinator.sh
+#     path: "{{bossjones__tmuxinator__user}}/install_tmuxinator.sh"
+#     mode: 0755
+
+- name: install script
+  template:
+      dest: "~{{bossjones__tmuxinator__user}}/install_tmuxinator.sh"
+      src: install_tmuxinator.sh
+      mode: 0755
+
+
+- name: Check groups that user belongs to already
+  shell: "~{{bossjones__tmuxinator__user}}/install_tmuxinator.sh"
+  become: yes
+  become_user: "{{bossjones__tmuxinator__user}}"
+  register: install_tmuxinator_res
+
+- debug:
+    var: install_tmuxinator_res.stdout

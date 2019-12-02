@@ -12,3 +12,5 @@ bossjones__tmuxinator__rbenv:
   env: "system"
 
 bossjones__tmuxinator__rbenv_root: "{% if bossjones__tmuxinator__rbenv.env == 'system' %}/usr/local/rbenv{% else %}~/.rbenv{% endif %}"
+
+bossjones__tmuxinator__ruby_version: "2.5.1"
