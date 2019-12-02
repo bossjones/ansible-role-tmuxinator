@@ -12,9 +12,15 @@
   changed_when: false
   check_mode: no
   become: yes
-  become_user: "{{item.user}}"
-  with_items: "{{bossjones__tmuxinator__path_to_tmuxinator_config}}"
+  become_user: "{{bossjones__tmuxinator__user}}"
   register: bossjones__tmuxinator_user_groups
 
 - debug:
-    var: bossjones__tmuxinator_user_groups.stdout
+    var: bossjones__tmuxinator_user_groups.stdout | replace(" ", ",")
+
+
+- name: "Add the user {{bossjones__tmuxinator__user}}, appending the group 'rbenvgrp' to the user's groups"
+  user:
+    name: "{{bossjones__tmuxinator__user}}"
+    groups: "rbenvgrp"
+    append: yes

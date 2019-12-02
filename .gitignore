@@ -475,3 +475,7 @@ Gemfile*
 .molecule
 00aptproxy
 .vscode
+
+ansible-role-tmux/
+boss-ansible-role-debug/
+zzet.rbenv/
