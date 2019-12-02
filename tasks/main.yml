@@ -32,6 +32,11 @@
     group: "rbenvgrp"
     owner: "nobody"
 
+- name: mkdir ~/.tmuxinator
+  file:
+    path: "~{{bossjones__tmuxinator__user}}/.tmuxinator"
+    state: "directory"
+
 # - name: change group ownership of rbenv_root dir
 #   file:
 #     src: files/install_tmuxinator.sh
@@ -44,6 +49,12 @@
       src: install_tmuxinator.sh
       mode: 0755
 
+- name: tmuxinator zsh.yml
+  template:
+      dest: "~{{bossjones__tmuxinator__user}}/.tmuxinator/zsh.yml"
+      src: zsh.yml
+      owner: "{{bossjones__tmuxinator__user}}"
+      group: "{{bossjones__tmuxinator__user}}"
 
 - name: Check groups that user belongs to already
   shell: "~{{bossjones__tmuxinator__user}}/install_tmuxinator.sh"
