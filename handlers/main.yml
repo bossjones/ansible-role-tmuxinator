@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+# handlers for ansible-role-tmuxinator
+---
+# Suggested ansible variable namespace: behance__oh__my__bossjones__tmuxinator___

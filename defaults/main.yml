@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+# default vars for  ansible-role-tmuxinator
+---
+# Suggested ansible variable namespace: behance__oh__my__bossjones__tmuxinator___
+
+bossjones__tmuxinator__path_to_tmuxinator_config:
+  - { user: "vagrant", dir: "/home/vagrant" }

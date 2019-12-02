@@ -1,0 +1,17 @@
+# -*- mode: sh; -*-
+# (rootdir)/.envrc : direnv configuration file
+# see https://direnv.net/
+# pyversion=$(head .python-version)
+# pvenv=$(head     .python-virtualenv)
+pyversion=3.6.8
+pvenv=bossjones-ansible3
+
+use python ${pyversion}
+# Create the virtualenv if not yet done
+layout virtualenv ${pyversion} ${pvenv}
+# activate it
+layout activate ${pvenv}
+
+# Load environment variables that inform Ansible to use ARA regardless
+# of its location or python version
+# source <(python -m ara.setup.env)

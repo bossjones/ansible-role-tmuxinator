@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+# tasks for  ansible-role-tmuxinator
+---
+- name: Ensure group "rbenvgrp" exists
+  group:
+    name: rbenvgrp
+    state: present
+
+- name: Check groups that user belongs to already
+  shell: "groups"
+  failed_when: false
+  changed_when: false
+  check_mode: no
+  become: yes
+  become_user: "{{item.user}}"
+  with_items: "{{bossjones__tmuxinator__path_to_tmuxinator_config}}"
+  register: bossjones__tmuxinator_user_groups
+
+- debug:
+    var: bossjones__tmuxinator_user_groups.stdout

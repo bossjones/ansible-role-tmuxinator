@@ -1,0 +1,10 @@
+molecule[ec2]
+pylint
+yamllint
+ansible-lint
+autopep8
+isort
+pre-commit
+bumplus
+bumpversion
+

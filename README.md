@@ -1,2 +1,2 @@
-# ansible-role-tmuxinator
-Install tmuxinator role
+# ansible-role-tmuxinatorinator
+Install tmuxinatorinator role

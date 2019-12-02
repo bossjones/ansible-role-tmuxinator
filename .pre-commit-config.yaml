@@ -1,0 +1,55 @@
+---
+exclude: '^(contrib|docs/conf.py|docs/gfx)'
+
+repos:
+  - repo: https://github.com/python/black
+    rev: 19.3b0
+    hooks:
+      - id: black
+        language_version: python3
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.1.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+        args: ['--fix=no']
+      - id: end-of-file-fixer
+        exclude: CHANGELOG.md
+      - id: check-byte-order-marker
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: debug-statements
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.7.7
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - flake8-black
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.15.0
+    hooks:
+      - id: yamllint
+        files: \.(yaml|yml)$
+        types: [file, yaml]
+        entry: yamllint --strict
+  - repo: https://github.com/ansible/ansible-lint.git
+    rev: v4.1.0
+    hooks:
+      - id: ansible-lint
+        files: \.(yaml|yml)$
+        entry: ansible-lint
+        language_version: python3
+        args: [
+          "--exclude=roles",
+          "--exclude=basic/roles",
+          "--exclude=.travis.yml"
+        ]
+  -   repo: local
+      hooks:
+      -   id: ansible-check-unencrypted-vault
+          name: Check variables directory for unencrypted vault secrets
+          description: This hook ensures that we never commit secrets to github
+          entry: contrib/ansible_unencrypted_vault_checker.py
+          language: script
+          files: ^vars/secret/.*\.vault$

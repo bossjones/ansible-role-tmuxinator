@@ -1,0 +1,8 @@
+---
+- src: https://github.com/bossjones/boss-ansible-role-debug
+- src: https://github.com/bossjones/ansible-role-tmux
+# https://github.com/suzuki-shunsuke/ansible-gvm
+
+- src: https://github.com/zzet/ansible-rbenv-role
+  name: zzet.rbenv
+  version: 3.3.6

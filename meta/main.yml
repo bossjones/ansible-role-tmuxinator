@@ -1,0 +1,30 @@
+---
+galaxy_info:
+  author: Malcolm Jones
+  company: Tony Dark Industries
+  description: tmuxinator
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - bionic
+    - name: Debian
+      versions:
+        - squeeze
+        - wheezy
+        - jessie
+    - name: EL
+      versions:
+        - 7
+    - name: MacOSX
+      versions:
+        - 10.12
+  galaxy_tags:
+    - system
+    - shell
+    - user
+    - zsh
+dependencies: []

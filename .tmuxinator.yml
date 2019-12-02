@@ -1,0 +1,64 @@
+---
+# ~/.tmuxinatorinator/ansible-role-tmuxinator.yml
+
+# source: https://github.com/tmuxinatorinator/tmuxinatorinator/blob/master/spec/fixtures/sample.yml
+# source: https://github.com/luismayta/dotfiles/blob/develop/.tmuxinatorinator.yml
+
+name: ansible-role-tmuxinator
+root: ~/dev/bossjones/ansible-role-tmuxinator
+tmuxinator_options: -2
+# set-option -g default-shell /usr/local/bin/zsh
+
+# Runs on project start, always
+# on_project_start: make environment
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window:
+  - exec zsh
+
+# Optional tmuxinator socket
+# socket_name: foo
+
+# Note that the pre and post options have been deprecated and will be replaced by
+# project hooks.
+
+# Project hooks
+
+# Runs on project start, always
+# on_project_start: make environment
+
+# Run on project start, the first time
+# on_project_first_start: command
+
+# Run on project start, after the first time
+# on_project_restart: command
+
+# Run on project exit ( detaching from tmuxinator session )
+# on_project_exit: make docker.down
+
+# Run on project stop
+# on_project_stop: make docker.down
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: pipenv shell --fancy
+
+# Pass command line options to tmuxinator. Useful for specifying a different tmuxinator.conf.
+# tmuxinator_options: -f ~/.tmuxinator.mac.conf
+
+# Change the command to call tmuxinator.  This can be used by derivatives/wrappers like byobu.
+# tmuxinator_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+
+
+windows:
+  - neofetch:
+      layout: 9fa4,223x75,0,0{118x75,0,0[118x52,0,0{59x52,0,0,8,58x52,60,0,13},118x22,0,53,12],104x75,119,0[104x16,119,0,1,104x15,119,17,9,104x22,119,33,2,104x19,119,56,3]}
+      panes:
+        - neofetch:
+            - pwd
+        - pwd:
+            - pwd
+        - pwd:
+            - pwd
+            - pwd

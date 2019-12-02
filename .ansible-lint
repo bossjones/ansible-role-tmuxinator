@@ -1,0 +1,17 @@
+parseable: true
+quiet: true
+# ansible-lint config for functional testing, used to bypass expected metadata
+# errors in molecule-generated roles. Loaded via the metadata_lint_update
+# pytest helper. For reference, see "E7xx - metadata" in:
+#  https://docs.ansible.com/ansible-lint/rules/default_rules.html
+skip_list:
+  # metadata/701 - author, description, license, min_ansible_version, platforms
+  - '701'
+  # metadata/703 - Should change default metadata: <field>"
+  - '703'
+  - skip_this_tag
+  - and_this_one_too
+tags:
+  - run_this_tag
+use_default_rules: true
+verbosity: 1

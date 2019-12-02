@@ -1,0 +1,27 @@
+ansible<2.8
+# yolk3k
+# PyYAML
+mitogen
+# # ansigenome
+jinja2-cli[yaml]
+netaddr
+# pretty
+# python-slugify
+# six
+# simplejson
+# shade
+awscli
+boto3
+botocore
+# ansible-inventory-grapher
+# ansible-playbook-grapher
+# awacs
+# jsonschema
+# requests
+# yamlreader
+# openshift
+# pbr
+# pre-commit
+docker
+wget
+# readline

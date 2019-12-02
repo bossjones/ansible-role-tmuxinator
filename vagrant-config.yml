@@ -1,0 +1,25 @@
+# https://gist.github.com/gnarf/b103e77f37236ca72d8e
+# SOURCE: \cat roles/*/vagrant-config.yml | pbcopy
+:vms:
+  ubuntu-tmuxinator:
+    :hostname: "ubuntu-tmuxinator"
+    :name: "ubuntu-tmuxinator"
+    :type: "master"
+    :box: "ubuntu/bionic64"
+    :eth1: "192.168.10.25"
+    :ip: "192.168.10.25"
+    :mem: 2048
+    :ram: 2048
+    :cpu: 2
+    :id: 10
+  fedora-tmuxinator:
+    :hostname: "fedora-tmuxinator"
+    :name: "fedora-tmuxinator"
+    :type: "master"
+    :box: "fedora/29-cloud-base"
+    :eth1: "192.168.10.26"
+    :ip: "192.168.10.26"
+    :mem: 2048
+    :ram: 2048
+    :cpu: 2
+    :id: 11
