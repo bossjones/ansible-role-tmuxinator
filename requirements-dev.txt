@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-lint==4.1.0
+ansible-lint==4.1.0       # via -r requirements-dev.in, molecule
 ansible==2.9.0            # via ansible-lint, molecule
 anyconfig==0.9.7          # via molecule
 arrow==0.15.4             # via jinja2-time
@@ -12,15 +12,15 @@ aspy.yaml==1.3.0          # via pre-commit
 astroid==1.6.6            # via pylint
 atomicwrites==1.3.0       # via pytest
 attrs==19.3.0             # via pytest
-autopep8==1.4.4
+autopep8==1.4.4           # via -r requirements-dev.in
 backports.functools-lru-cache==1.6.1  # via arrow, astroid, isort, pylint
 bcrypt==3.1.7             # via paramiko
 binaryornot==0.4.4        # via cookiecutter
 boto3==1.10.16            # via molecule
 boto==2.49.0              # via molecule
 botocore==1.13.16         # via boto3, s3transfer
-bumplus==0.1.6
-bumpversion==0.5.3
+bumplus==0.1.6            # via -r requirements-dev.in
+bumpversion==0.5.3        # via -r requirements-dev.in
 cerberus==1.3.2           # via molecule
 certifi==2019.9.11        # via requests
 cffi==1.13.2              # via bcrypt, cryptography, pynacl
@@ -48,14 +48,14 @@ idna==2.8                 # via requests
 importlib-metadata==0.23  # via pluggy, pre-commit, pytest
 importlib-resources==1.0.2  # via pre-commit
 ipaddress==1.0.23         # via cryptography
-isort==4.3.21
+isort==4.3.21             # via -r requirements-dev.in, pylint
 jinja2-time==0.2.0        # via cookiecutter
 jinja2==2.10.3            # via ansible, bumplus, click-completion, cookiecutter, jinja2-time, molecule
 jmespath==0.9.4           # via boto3, botocore
 lazy-object-proxy==1.4.3  # via astroid
 markupsafe==1.1.1         # via jinja2
 mccabe==0.6.1             # via flake8, pylint
-molecule[ec2]==2.22
+molecule[ec2]==2.22       # via -r requirements-dev.in
 monotonic==1.5            # via fasteners
 more-itertools==5.0.0     # via pytest, zipp
 nodeenv==1.3.3            # via pre-commit
@@ -67,14 +67,14 @@ pbr==5.4.3                # via git-url-parse, python-gilt
 pexpect==4.7.0            # via molecule
 pluggy==0.13.0            # via pytest
 poyo==0.5.0               # via cookiecutter
-pre-commit==1.20.0
-psutil==5.6.5             # via molecule
+pre-commit==1.20.0        # via -r requirements-dev.in, molecule
+psutil==5.6.6             # via molecule
 ptyprocess==0.6.0         # via pexpect
 py==1.8.0                 # via pytest
 pycodestyle==2.5.0        # via autopep8, flake8
 pycparser==2.19           # via cffi
 pyflakes==2.1.1           # via flake8
-pylint==1.9.5
+pylint==1.9.5             # via -r requirements-dev.in
 pynacl==1.3.0             # via paramiko
 pyparsing==2.4.5          # via packaging
 pytest==4.6.6             # via testinfra
@@ -102,8 +102,8 @@ virtualenv==16.7.7        # via pre-commit
 wcwidth==0.1.7            # via pytest
 whichcraft==0.6.1         # via cookiecutter
 wrapt==1.11.2             # via astroid
-yamllint==1.18.0
+yamllint==1.18.0          # via -r requirements-dev.in, molecule
 zipp==0.6.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.6.0        # via cerberus
+# setuptools
