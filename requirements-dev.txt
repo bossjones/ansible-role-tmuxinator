@@ -32,7 +32,7 @@ colorama==0.4.1           # via molecule, python-gilt
 configparser==4.0.2       # via entrypoints, flake8, importlib-metadata, pylint
 contextlib2==0.6.0.post1  # via importlib-metadata
 cookiecutter==1.6.0       # via molecule
-cryptography==2.8         # via ansible, paramiko
+cryptography==3.2         # via ansible, paramiko
 docutils==0.15.2          # via botocore
 entrypoints==0.3          # via flake8
 enum34==1.1.6             # via astroid, click-completion, cryptography, flake8
